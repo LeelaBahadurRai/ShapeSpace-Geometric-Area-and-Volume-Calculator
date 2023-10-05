@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShapeSpace: Geometric Area and Volume Calculator</title>
+</head>
+<body>
+    <div id="geometry">
+        <h1>Area-Volume Calculator</h1>
+        <label for="dropdown">Select the figure</label>
+        <select id="figureSelect">
+            <option value="">Select an option</option>
+            <option value="Cube">Cube</option>
+            <option value="Cuboid">Cuboid</option>
+            <option value="Cone">Cone</option>
+            <option value="Cylinder">Cylinder</option>
+            <option value="Sphere">Sphere</option>
+            <option value="Hemisphere">Hemisphere</option>
+            <option value="Frustum">Frustum</option>
+        </select>
+
+        <div id="dimensionInputs" style="display: none;">
+            <label for="dimension1">Dimension 1:</label>
+            <input type="number" id="dimension1" placeholder="Enter dimension 1">
+            <br>
+            <br>
+            <label for="dimension2">Dimension 2:</label>
+            <input type="number" id="dimension2" placeholder="Enter dimension 2">
+            <br>
+            <br>
+            <!-- Add more dimension inputs as needed for specific shapes -->
+        </div>
+    </div>
+
+    <script>
+        const figureSelect = document.getElementById('figureSelect');
+        const dimensionInputs = document.getElementById('dimensionInputs');
+
+        figureSelect.addEventListener('change', () => {
+            // Hide the dimension inputs by default
+            dimensionInputs.style.display = 'none';
+
+            const selectedFigure = figureSelect.value;
+
+            // Check the selected figure and display the relevant dimension inputs
+            if (selectedFigure === 'Cube' || selectedFigure === 'Sphere' || selectedFigure === 'Hemisphere') {
+                dimensionInputs.style.display = 'block';
+                dimensionInputs.innerHTML = `
+                    <label for="dimension1">Side length or Radius:</label>
+                    <input type="number" id="dimension1" placeholder="Enter side length or radius">
+                `;
+            } else if (selectedFigure === 'Cuboid') {
+                dimensionInputs.style.display = 'block';
+                dimensionInputs.innerHTML = `
+                    <label for="dimension1">Length:</label>
+                    <input type="number" id="dimension1" placeholder="Enter length">
+                    <br>
+                    <br>
+                    <label for="dimension2">Width:</label>
+                    <input type="number" id="dimension2" placeholder="Enter width">
+                    <br>
+                    <br>
+                    <label for="dimension3">Height:</label>
+                    <input type="number" id="dimension3" placeholder="Enter height">
+                `;
+            } else if (selectedFigure === 'Cone' || selectedFigure === 'Frustum') {
+                dimensionInputs.style.display = 'block';
+                dimensionInputs.innerHTML = `
+                    <label for="dimension1">Radius:</label>
+                    <input type="number" id="dimension1" placeholder="Enter radius">
+                    <br>
+                    <br>
+                    <label for="dimension2">Height:</label>
+                    <input type="number" id="dimension2" placeholder="Enter height">
+                `;
+            }
+            // Add additional else if blocks for other shapes as needed
+        });
+    </script>
+</body>
+</html>
