@@ -29,7 +29,11 @@
             <input type="number" id="dimension2" placeholder="Enter dimension 2">
             <br>
             <br>
-            <!-- Add more dimension inputs as needed for specific shapes -->
+             <button id="buttton">Calculate</button>
+
+            <div id="results">
+                
+            </div>
         </div>
     </div>
 
@@ -44,35 +48,132 @@
             const selectedFigure = figureSelect.value;
 
             // Check the selected figure and display the relevant dimension inputs
-            if (selectedFigure === 'Cube' || selectedFigure === 'Sphere' || selectedFigure === 'Hemisphere') {
+            if (selectedFigure === 'Cube' ) {
                 dimensionInputs.style.display = 'block';
                 dimensionInputs.innerHTML = `
-                    <label for="dimension1">Side length or Radius:</label>
-                    <input type="number" id="dimension1" placeholder="Enter side length or radius">
+                     <br>
+                    <label for="dimension1">Side length of Cube:</label>
+                    <input type="number" id="dimension1" placeholder="Side length of Cube">
+                    <br>
+                    <button id="buttton">Calculate</button>
+
+                     <div id="results">
+    
+                     </div>
                 `;
-            } else if (selectedFigure === 'Cuboid') {
+            }
+            else if
+                (selectedFigure === 'Sphere') {
                 dimensionInputs.style.display = 'block';
                 dimensionInputs.innerHTML = `
-                    <label for="dimension1">Length:</label>
+                    <br>
+                    <label for="dimension1"> Radius of Sphere:</label>
+                    <input type="number" id="dimension1" placeholder="Radius of Sphere">
+                    <br>
+                    <button id="buttton">Calculate</button>
+
+                     <div id="results">
+    
+                     </div>
+            `}
+            else if
+                (selectedFigure === 'Hemisphere') {
+                dimensionInputs.style.display = 'block';
+                dimensionInputs.innerHTML = `
+                    <br>
+                    <label for="dimension1">Radius of Hemisphere:</label>
+                    <input type="number" id="dimension1" placeholder="Radius of Hemisphere">
+                    <br>
+                    <button id="buttton">Calculate</button>
+
+                     <div id="results">
+    
+                     </div>
+            `}
+             else if (selectedFigure === 'Cuboid') {
+                dimensionInputs.style.display = 'block';
+                dimensionInputs.innerHTML = `
+                     <br>
+                    <label for="dimension1">Length of Cuboid:</label>
                     <input type="number" id="dimension1" placeholder="Enter length">
                     <br>
                     <br>
-                    <label for="dimension2">Width:</label>
+                    <label for="dimension2">Width of Cuboid:</label>
                     <input type="number" id="dimension2" placeholder="Enter width">
                     <br>
                     <br>
-                    <label for="dimension3">Height:</label>
+                    <label for="dimension3">Height of Cuboid:</label>
                     <input type="number" id="dimension3" placeholder="Enter height">
+                    <br>
+                    <button id="buttton">Calculate</button>
+
+                     <div id="results">
+    
+                     </div>
                 `;
-            } else if (selectedFigure === 'Cone' || selectedFigure === 'Frustum') {
+            } 
+            else if (selectedFigure === 'Cone') {
                 dimensionInputs.style.display = 'block';
                 dimensionInputs.innerHTML = `
-                    <label for="dimension1">Radius:</label>
+                    <br>
+                    <label for="dimension1">Radius of cone:</label>
                     <input type="number" id="dimension1" placeholder="Enter radius">
                     <br>
                     <br>
-                    <label for="dimension2">Height:</label>
+                    <label for="dimension2">Height of cone:</label>
                     <input type="number" id="dimension2" placeholder="Enter height">
+                    <br>
+                    <br>
+                    <label for="dimension3">Slant Height of cone:</label>
+                    <input type="number" id="dimension3" placeholder="Enter Slant height">
+                    <br>
+                    <button id="buttton">Calculate</button>
+
+                     <div id="results">
+    
+                     </div>
+                `;
+            }
+            else if (selectedFigure === 'Frustum') {
+                dimensionInputs.style.display = 'block';
+                dimensionInputs.innerHTML = `
+                    <br>
+                    <label for="dimension1">Radius of Frustum:</label>
+                    <input type="number" id="dimension1" placeholder="Enter radius of Frustum">
+                    <br>
+                    <br>
+                    <label for="dimension2">Height of Frustum:</label>
+                    <input type="number" id="dimension2" placeholder="Enter height">
+                    <br>
+                    <br>
+                    <label for="dimension3">Slant Height of Frustum:</label>
+                    <input type="number" id="dimension3" placeholder="Enter Slant height">
+                    <br>
+                    <button id="buttton">Calculate</button>
+
+                     <div id="results">
+    
+                     </div>
+                `;
+            }
+             
+            else if (selectedFigure === 'Cylinder') {
+                dimensionInputs.style.display = 'block';
+                dimensionInputs.innerHTML = `
+                    <br>
+                    <label for="dimension1">Radius of Cylinder:</label>
+                    <input type="number" id="dimension1" placeholder="Enter radius of Cylinder">
+                    <br>
+                    <br>
+                    <label for="dimension2">Height of Cylinder:</label>
+                    <input type="number" id="dimension2" placeholder="Enter height">
+                    <br>
+                    <button id="buttton">Calculate</button>
+
+                     <div id="results">
+    
+                     </div>
+                    
                 `;
             }
             // Add additional else if blocks for other shapes as needed
